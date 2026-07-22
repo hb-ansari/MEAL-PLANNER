@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+
+export const maxDuration = 60; // Allow up to 60s for AI generation (Vercel Hobby limit)
 import { MealPlanPreferences, MealPlan } from "@/types/meal-plan";
 import { generateMealPlanAI } from "@/lib/ai-generator";
 import { getPresetMealPlan } from "@/lib/preset-plans";
