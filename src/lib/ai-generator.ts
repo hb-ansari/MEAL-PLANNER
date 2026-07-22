@@ -9,9 +9,9 @@ export async function generateMealPlanAI(preferences: MealPlanPreferences): Prom
   if (apiKey) {
     try {
       const genAI = new GoogleGenerativeAI(apiKey);
-      // Using active model gemini-2.5-flash
+      // gemini-1.5-flash: stable, fast, best for production on Vercel Hobby
       const model = genAI.getGenerativeModel({
-        model: "gemini-2.5-flash",
+        model: "gemini-1.5-flash",
         generationConfig: { responseMimeType: "application/json" },
       });
 
@@ -124,7 +124,7 @@ export async function swapSingleMealAI(
     try {
       const genAI = new GoogleGenerativeAI(apiKey);
       const model = genAI.getGenerativeModel({
-        model: "gemini-2.5-flash",
+        model: "gemini-1.5-flash",
         generationConfig: { responseMimeType: "application/json" },
       });
 
